@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.timezone import now
+from pytz import timezone
 # Create your models here.
 class Post(models.Model):
     sno=models.AutoField(primary_key=True)
@@ -8,6 +9,8 @@ class Post(models.Model):
     content=models.TextField()
     author=models.CharField(max_length=30)
     slug=models.CharField(max_length=200)
+    view=models.IntegerField(default=0)
+    
     timeStamp=models.DateTimeField(auto_now_add=True, blank=True)
 
     def __str__(self):

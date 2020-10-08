@@ -7,7 +7,14 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login,logout,authenticate
 # Create your views here.
 def home(request):
-    return render(request,"home/home.html")
+    max=0
+    posts=Post.objects.all()
+    for post in posts:
+        if post.view>max:
+            max=post.view
+    popular=Post.objects.filter(view=max)[0]
+    print(popular) 
+    return render(request,"home/home.html",{"popular":popular})
 
 def about(request):
     return render(request,"home/about.html")

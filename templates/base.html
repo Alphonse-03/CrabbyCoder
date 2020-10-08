@@ -14,7 +14,7 @@
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Crabby-Coder</a>
+    <a class="navbar-brand" href="/">Crabby-Coder</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -25,10 +25,8 @@
         <li class="nav-item ">
           <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
         </li>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="{% url 'about' %}">About</a>
-        </li>
+        
+        
         <li class="nav-item">
           <a class="nav-link" href="/blog">BLOG</a>
         </li>
@@ -39,14 +37,14 @@
 
       <form method="get" action='/search' class="form-inline my-2 my-lg-0">
         {% csrf_token %}
-        <input class="form-control mr-sm-2" type="search" name="query" id="query" placeholder="Search"
+        <input class="form-control mr-sm-2 " type="search" name="query" id="query" placeholder="Search"
           aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <button class="btn btn-outline-success my-2 my-sm-0 mx-2" type="submit">Search</button>
       </form>
      
       {% if user.is_authenticated %}
         <div class="intro">hy{{user.username}}</div>
-      <a class="nav-link mx-1" href="{% url 'logouthandle' %}">logout</a>
+      <a class="nav-link mx-2" href="{% url 'logouthandle' %}">logout</a>
      
       {% else %}
       <a class="nav-link mx-1" href="{% url 'loginhandle'%}" data-toggle="modal" data-target="#loginmodal">login</a>
