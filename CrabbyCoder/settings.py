@@ -25,7 +25,7 @@ SECRET_KEY = ')f91bf_*()@#n^d4)z&cul9taq--kzrfp%!k7=$zph0le&5p8n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','crabbycoder.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','mca-blog.herokuapp.com']
 
 
 # Application definition
